@@ -2,7 +2,8 @@ apiVersion: v1
 kind: Service
 
 metadata:
-  name: frontend-service
+  name: aks-app-frontend
+  namespace: aks-app
 
 spec:
   type: ClusterIP

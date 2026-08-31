@@ -2,7 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: backend-deployment
+  name: aks-app-backend
+  namespace: aks-app
   labels:
     app: backend
 
@@ -22,5 +23,7 @@ spec:
       containers:
         - name: backend
           image: ghcr.io/sudhirkushwaha10-hue/aks-app-backend:v1
+          imagePullPolicy: Always
+
           ports:
             - containerPort: 8000
