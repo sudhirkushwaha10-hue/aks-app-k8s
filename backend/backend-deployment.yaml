@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: aks-app-backend
+  name: backend-deployment
   namespace: aks-app
   labels:
     app: backend
