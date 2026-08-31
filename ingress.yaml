@@ -13,16 +13,17 @@ spec:
     - http:
         paths:
           - path: /api
-            PathType: Prefix
+            pathType: Prefix
 
             backend:
               service:
                 name: aks-app-backend
                 port:
                   number: 8000
-          
+
           - path: /
-            PathType: Prefix
+            pathType: Prefix
+
             backend:
               service:
                 name: aks-app-frontend
