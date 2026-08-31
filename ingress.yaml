@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+
+kind: Ingress
+
+metadata:
+  name: aks-app-ingress
+  namespace: aks-app
+
+spec:
+  ingressClassName: nginx
+
+  rules:
+    - http:
+        paths:
+          - path: /api
+            PathType: Prefix
+
+            backend:
+              service:
+                name: aks-app-backend
+                port:
+                  number: 8000
+          
+          - path: /
+            PathType: Prefix
+            backend:
+              service:
+                name: aks-app-frontend
+                port:
+                  number: 80
